@@ -47,3 +47,5 @@ Chọn BoW + MLP cho luồng chính. F1 toàn test là 0.958, p95 là 0.27 ms/ti
 ## 7. AI log và điều đã học
 
 Bản làm lại dùng Codex để đọc đề, điền TODO, ghi dự đoán trước khi chạy và phân tích kết quả thực nghiệm. Mã được kiểm tra qua các ô có sẵn trong notebook. Sai lệch lớn nhất là few-shot. Tôi dự đoán F1 tăng khoảng 0,10 nhưng kết quả giảm từ 0.667 xuống 0.000. Với mô hình nhỏ, cần kiểm tra tỷ lệ đầu ra hợp lệ trước khi kết luận ví dụ mẫu giúp phân loại tốt hơn.
+
+Các số minh hoạ trong bộ 50 ca khó có sẵn từ template của đề. Output hiển thị đã che chuỗi liên lạc khi in SMS, còn dữ liệu tính toán dùng đúng các ca gốc.
