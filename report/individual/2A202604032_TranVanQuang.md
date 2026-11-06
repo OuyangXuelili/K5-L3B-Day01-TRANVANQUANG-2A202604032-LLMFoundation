@@ -1,6 +1,6 @@
 # Báo cáo cá nhân — Day 01
 
-SEED 3164. Nguồn UCI, 5,171 tin sau khử trùng. Chia 3,621 train, 775 validation và 775 test. Độ trễ đo trên CPU Windows từ SMS thô đến nhãn.
+SEED 3164. Nguồn UCI, 5,171 tin sau khử trùng. Chia 3,621 train, 775 validation và 775 test. Độ trễ đo trên CPU Windows từ SMS thô đến nhãn. Bản UCI còn 5.171 tin sau khử trùng, khác số 5.169 trong mô tả Kaggle ở README. Mọi phương án đều dùng chung dữ liệu UCI và cùng tập test.
 
 ## 1. Bằng chứng
 
@@ -31,10 +31,10 @@ F1 SUB 40 là 0.667 với model nhỏ zero-shot, 0.655 với model lớn zero-sh
 
 ## 4. Phân tích 50 ca khó
 
-2. BoW + MLP giảm nhiều nhất, từ 0.974 trên SUB xuống 0.359 ở 50 ca khó. Ở nhóm prompt injection, accuracy của prompt thường là 33.3%, prompt có thẻ `<sms>` là 16.7%. Các nhóm giảm khi phòng thủ gồm Thao túng / lừa đảo, Spam giọng tự nhiên, Né từ khoá.
+2. BoW + MLP giảm nhiều nhất, từ 0.974 trên SUB xuống 0.359 ở 50 ca khó. Ở nhóm prompt injection, accuracy của prompt thường là 33.3%, prompt có thẻ `<sms>` là 16.7%. Các nhóm giảm khi phòng thủ gồm Thao túng / lừa đảo, Spam giọng tự nhiên, Né từ khoá. Prompt phòng thủ chưa giúp trong lần chạy. Các điểm này đo nhãn dự đoán, để phân biệt làm theo lệnh với lỗi phân loại khác cần lưu và xem đầu ra từng ca.
 
-- Ca #8 có nhãn ham, mô hình đoán spam. 'Cash prize' nhưng là sự kiện nội bộ
-- Ca #11 có nhãn spam, mô hình đoán ham. Giọng thân mật, giả làm người quen, thực chất là khuyến mãi
+- Ca #8 có nhãn ham, BoW + MLP đoán spam. Cụm 'cash prize' là tín hiệu quen thuộc của quảng cáo, nhưng câu đang nói về sự kiện nội bộ. Biểu diễn từ riêng lẻ làm mô hình bỏ qua ngữ cảnh này.
+- Ca #11 có nhãn spam, BoW + MLP đoán ham. Tin khuyến mãi dùng giọng thân mật và giả làm người quen, nên ít giống những mẫu quảng cáo nhiều từ khoá trong dữ liệu huấn luyện.
 
 ## 5. Thử thách cá nhân
 
