@@ -6,7 +6,7 @@ SEED 3164. Nguồn UCI, 5,171 tin sau khử trùng. Chia 3,621 train, 775 valida
 
 - [Notebook đã chạy](day01_lab.ipynb)
 - [Kết quả JSON](lab1_report.json)
-- [Bản trình bày 5 phép tính](hand_calc.jpg) (đánh máy).
+- [Ảnh viết tay đủ các bước của 5 phép tính](hand_calc.jpg).
 
 ## 2. Kết quả chính
 
